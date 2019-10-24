@@ -1,0 +1,12 @@
+{% extends 'questionnaire.html' %}
+
+{% block questions %}
+<div class="container">
+
+        <form method="POST" action="/sus/1">
+            {{ form.csrf_token }}
+            {{ form.name.label }} {{ form.name(size=20) }}
+        <input type="submit" value="Go">
+
+</div>
+{% endblock %}
