@@ -2,11 +2,34 @@
 
 {% block questions %}
 <div class="container">
-
+<h1>First round of Questions</h1>
         <form method="POST" action="/sus/1">
             {{ form.csrf_token }}
-            {{ form.name.label }} {{ form.name(size=20) }}
-        <input type="submit" value="Go">
+            <div class="form-group question">
+             <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.test1 %}
+                <div class="form-check form-check-inline">
+                        <div class="col">
+                        {{subfield.label(class_="form-check-label")}}
+                        {{subfield(class_="form-check-input")}}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+            </div>
+            </div>
+        <input class="btn btn-primary" type="submit" value="Gehe zur nächsten Seite">
 
+
+        <a class="btn btn-danger" href="/cancel">Cancel</a>
+        </form>
+<div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
 </div>
 {% endblock %}

@@ -1,12 +1,16 @@
-from flask import Flask, render_template, session, request, redirect
+from flask import Flask, render_template, session, request, redirect, flash
 from forms import Step1, Step2
 from flask_session import Session
+from database import Database
+
 
 app = Flask(__name__,template_folder="templates")
 app.secret_key = "SKEMWNU9ueELhRdABnmXaNwQqx2TThcB"
 app.config['SESSION_TYPE'] = 'filesystem'
 sess = Session()
 sess.init_app(app)
+
+database = Database()
 
 @app.route('/')
 def hello_world():
@@ -19,9 +23,8 @@ def hello_world():
 
 @app.route("/saveSurvey")
 def saveSurvey(methods=('GET', 'POST')):
-    #todo
-    print(session["user"])
-    return session["user"]
+    flash(session["user"])
+    return redirect("thank-you")
 
 @app.route("/newSurvey")
 def createNewSurvey():
@@ -70,6 +73,18 @@ def redirectUserCorrectly():
         return redirect("/sus/2")
     elif(session["user"]["part1"] and session["user"]["part2"]):
         return redirect("/saveSurvey")
+
+
+@app.route("/cancel")
+def cancel():
+    session["user"] = None
+    flash("Cancelled filling out survey!")
+    redirectUserCorrectlyFromWithinSurvey("/cancel")
+    return redirect("/")
+
+@app.route("/thank-you")
+def thank_you():
+    return render_template('thank-you.html')
 
 def redirectUserCorrectlyFromWithinSurvey(currentPage):
     return
