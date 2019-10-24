@@ -3,7 +3,7 @@ from wtforms import StringField, RadioField
 from wtforms.validators import DataRequired
 
 class Step1(FlaskForm):
-    q1 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    test1 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
 
 
 class Step2(FlaskForm):
