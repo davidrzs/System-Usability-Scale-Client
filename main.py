@@ -2,9 +2,15 @@ from flask import Flask, render_template, session, request, redirect, flash, Res
 from forms import Step1, Step2
 from flask_session import Session
 from database import Database
+import os
+import sys
 
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    app = Flask(__name__, template_folder=template_folder)
+else:
+    app = Flask(__name__)
 
-app = Flask(__name__,template_folder="templates")
 app.secret_key = "SKEMWNU9ueELhRdABnmXaNwQqx2TThcB"
 app.config['SESSION_TYPE'] = 'filesystem'
 sess = Session()
