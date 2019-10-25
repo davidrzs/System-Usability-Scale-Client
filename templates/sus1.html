@@ -2,13 +2,13 @@
 
 {% block questions %}
 <div class="container">
-<h1>First round of Questions</h1>
+<h2>First round of Questions</h2>
         <form method="POST" action="/sus/1">
             {{ form.csrf_token }}
             
             <!--------question 1----->
             <div class="form-group question">
-              <h3>I think that I would like to use this system frequently.</h3>
+              <p class="questionText">I think that I would like to use this system frequently.</p>
               <div class="row">
                 <div class="col">
                 </div>
@@ -29,6 +29,7 @@
 
             <!--------question 1----->
             <div class="form-group question">
+              <p class="questionText">I think that I would like to use this system frequently.</p>
               <div class="row">
                 <div class="col">
                 </div>
@@ -49,6 +50,7 @@
 
             <!--------question 1----->
             <div class="form-group question">
+              <p class="questionText">I think that I would like to use this system frequently.</p>
               <div class="row">
                 <div class="col">
                 </div>
@@ -69,6 +71,7 @@
 
             <!--------question 1----->
             <div class="form-group question">
+              <p class="questionText">I think that I would like to use this system frequently.</p>
               <div class="row">
                 <div class="col">
                 </div>
@@ -88,12 +91,7 @@
         <input class="btn btn-primary" type="submit" value="Gehe zur nächsten Seite">
 
 
-        <a class="btn btn-danger" href="/cancel">Cancel</a>
+        <a class="btn btn-danger" href="/cancel">Abbrechen</a>
         </form>
-<div class="card">
-  <div class="card-body">
-    This is some text within a card body.
-  </div>
-</div>
 </div>
 {% endblock %}

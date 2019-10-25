@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect, flash
+from flask import Flask, render_template, session, request, redirect, flash, Response
 from forms import Step1, Step2
 from flask_session import Session
 from database import Database
@@ -32,11 +32,16 @@ def saveSurvey(methods=('GET', 'POST')):
     session["user"] = None
     flash("Thank you. Your data has been saved")
     # redirect to thank you page
-    return redirect("thank-you")
+    return redirect("/thank-you")
 
-@app.route("/exportToCSV")
-def exportToCSV():
-    database.toCsv()
+@app.route("/exportToCSVDownload")
+def exportToCSVDownload():
+    csv = database.toCsvDownload()
+    return Response(csv, mimetype='text/csv')
+
+@app.route("/exportToCSVFile")
+def exportToCSVFile():
+    database.toCsvFile()
     flash("Data sucessfully exported to file.")
     return redirect("/")
 
@@ -60,7 +65,8 @@ def page1():
         session["user"]["q4"] = form.q4.data;
         # we now redirect the user to part 2
         return redirect('/sus/2')
-    #flash("Please finish filling out all questions correctly.")
+    if request.method == 'POST':
+        flash("Bitte beantworten Sie zuerst alle Fragen.")
     return render_template('sus1.html', form=form)
 
 @app.route('/sus/2', methods=('GET','POST'))

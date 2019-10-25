@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, RadioField
 from wtforms.validators import DataRequired
+from wtforms.widgets import TextArea
 
 class Step1(FlaskForm):
     q1 = RadioField('test1',validators=[DataRequired()],choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
@@ -16,7 +17,7 @@ class Step1(FlaskForm):
 
 
 class Step2(FlaskForm):
-    name = StringField('name', validators=[DataRequired()])
+    name = StringField('name', widget=TextArea(), validators=[DataRequired()])
 
 """
 

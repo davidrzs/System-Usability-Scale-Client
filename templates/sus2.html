@@ -2,22 +2,22 @@
 
 {% block questions %}
 <div class="container">
+    <h2>Second round of Questions</h2>
 
         <form method="POST" action="/sus/2">
             {{ form.csrf_token }}
-            {{ form.name.label }} {{ form.name(size=20) }}
-        <input type="submit" value="Go">
+            <!--------question 1----->
+            <div class="form-group question">
+                <p class="questionText">I think that I would like to use this system frequently.</p>
+            {{ form.name(class_="form-control") }}
 
-        <article class="card">
-            <header>
-              <h3>Forest</h3>
-            </header>
-            <footer>
-              <button>Like</button>
-            </footer>
-          </article>
-          
-        <a href="/cancel">Cancel</a>
+              </div>
+  
+          <input class="btn btn-primary" type="submit" value="Gehe zur nächsten Seite">
+  
+  
+          <a class="btn btn-danger" href="/cancel">Abbrechen</a>
+          </form>
 
 </div>
 {% endblock %}

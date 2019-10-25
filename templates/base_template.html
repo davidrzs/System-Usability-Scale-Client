@@ -15,14 +15,32 @@
 <style>
 /* we add it inline so that we do not need to include it seperately*/
 body{
-background-color: #fff5f2;
+  background-color: #eef1ef;
 }
+
+.flashContainer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.questionText{
+  font-size: 130%;
+  font-weight: 500;
+}
+
 .content{
+  padding: 30px;
+  margin: 30px;
   background-color: white;
 }
 .question{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #a9b4c2;
+  border-radius: 4px;
+  padding: 15px;
 }
 </style>
 
@@ -30,21 +48,20 @@ background-color: #fff5f2;
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Navbar</span>
-    </nav>
     <div class="content">
       {% with messages = get_flashed_messages() %}
         {% if messages %}
+          <div class="flashContainer">
           {% for message in messages %}
             <div class="alert alert-primary" role="alert">
                 {{ message }}
             </div>
           {% endfor %}
+        </div>
         {% endif %}
       {% endwith %}
 
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
