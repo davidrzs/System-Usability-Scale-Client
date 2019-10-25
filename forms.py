@@ -3,7 +3,16 @@ from wtforms import StringField, RadioField
 from wtforms.validators import DataRequired
 
 class Step1(FlaskForm):
-    test1 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    q1 = RadioField('test1',validators=[DataRequired()],choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    q2 = RadioField('test1',validators=[DataRequired()],choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    q3 = RadioField('test1',validators=[DataRequired()],choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    q4 = RadioField('test1',validators=[DataRequired()],choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q5 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q6 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q7 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q8 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q9 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
+    #q10 = RadioField('test1',choices=[('1','Very well'),('2','Not at all'), ('3','Not at all'), ('4','Not at all'), ('5','Not at all')])
 
 
 class Step2(FlaskForm):

@@ -23,7 +23,16 @@ def hello_world():
 
 @app.route("/saveSurvey")
 def saveSurvey(methods=('GET', 'POST')):
+    # this aids debugging
     flash(session["user"])
+    # we now add all of it to the database
+    a = session["user"]
+    print(a)
+    database.addDataToDatabase(session.get("user"))
+    # remove the user from the session object
+    session["user"] = None
+    flash("Thank you. Your data has been saved")
+    # redirect to thank you page
     return redirect("thank-you")
 
 @app.route("/newSurvey")
@@ -38,30 +47,27 @@ def createNewSurvey():
 
 @app.route('/sus/1', methods=('GET', 'POST'))
 def page1():
-    res = redirectUserCorrectlyFromWithinSurvey("/sus/1")
-    if(res != None):
-        return res 
     form = Step1()
     if form.validate_on_submit():
         session["user"]["part1"] = True
-        session["user"]["answer1"] = form.name.data;
-        print(session)
-        # we need to store the info from the survey
+        # now we store the data from the survey in the session
+        session["user"]["q1"] = form.q1.data;
+        session["user"]["q2"] = form.q2.data;
+        session["user"]["q3"] = form.q3.data;
+        session["user"]["q4"] = form.q4.data;
+        # we now redirect the user to part 2
         return redirect('/sus/2')
+    flash("Please finish filling out all questions correctly.")
     return render_template('sus1.html', form=form)
 
 @app.route('/sus/2', methods=('GET','POST'))
 def page2():
-    print("yay")
-    res = redirectUserCorrectlyFromWithinSurvey("/sus/2")
-    if(res != None):
-        return res 
     form = Step2()
     if form.validate_on_submit():
         session["user"]["part2"] = True
-        session["user"]["answer2"] = form.name.data;
         # we need to store the info from the survey
         return redirect('/saveSurvey')
+    flash("Please finish filling out all questions correctly.")
     return render_template('sus2.html', form=form)
 
 def redirectUserCorrectly():

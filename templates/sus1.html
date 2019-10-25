@@ -5,22 +5,86 @@
 <h1>First round of Questions</h1>
         <form method="POST" action="/sus/1">
             {{ form.csrf_token }}
+            
+            <!--------question 1----->
             <div class="form-group question">
-             <div class="row">
+              <h3>I think that I would like to use this system frequently.</h3>
+              <div class="row">
                 <div class="col">
                 </div>
-                {% for subfield in form.test1 %}
-                <div class="form-check form-check-inline">
-                        <div class="col">
-                        {{subfield.label(class_="form-check-label")}}
-                        {{subfield(class_="form-check-input")}}
-                        </div>
+                {% for subfield in form.q3 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
                     </div>
+                  </div>
                 {% endfor %}
                 <div class="col">
                 </div>
+              </div>
             </div>
+
+
+
+            <!--------question 1----->
+            <div class="form-group question">
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q4 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
             </div>
+
+
+
+            <!--------question 1----->
+            <div class="form-group question">
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q2 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+
+
+            <!--------question 1----->
+            <div class="form-group question">
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q1 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
         <input class="btn btn-primary" type="submit" value="Gehe zur nächsten Seite">
 
 
