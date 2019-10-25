@@ -1,4 +1,5 @@
 from tinydb import TinyDB, Query
+import csv
 
 db = TinyDB('./db.json')
 settingsTable = db.table('settings')
@@ -14,3 +15,11 @@ class Database:
 
     def getAllData(self):
         print(dataTable.all())
+
+    def toCsv(self):
+        with open('study_data.csv', mode='w') as studyFile:
+            dataWriter = csv.writer(studyFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            # we must add a header dataWriter.writerow()
+            for line in dataTable.all():
+                dataWriter.writerow(line.values())
+                

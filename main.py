@@ -23,11 +23,10 @@ def hello_world():
 
 @app.route("/saveSurvey")
 def saveSurvey(methods=('GET', 'POST')):
-    # this aids debugging
-    flash(session["user"])
-    # we now add all of it to the database
-    a = session["user"]
-    print(a)
+    # get rid of internal variables -> we don't need to store them
+    session["user"].pop("part1")
+    session["user"].pop("part2")
+    # we add all of it to the database
     database.addDataToDatabase(session.get("user"))
     # remove the user from the session object
     session["user"] = None
@@ -35,13 +34,17 @@ def saveSurvey(methods=('GET', 'POST')):
     # redirect to thank you page
     return redirect("thank-you")
 
+@app.route("/exportToCSV")
+def exportToCSV():
+    database.toCsv()
+    flash("Data sucessfully exported to file.")
+    return redirect("/")
+
 @app.route("/newSurvey")
 def createNewSurvey():
     res = redirectUserCorrectlyFromWithinSurvey("/newSurvey")
     if(res != None):
         return res
-    #usr = User()
-    print("make new survey")
     session["user"] = {"part1":False, "part2":False}
     return redirect("/sus/1")
 
@@ -57,17 +60,21 @@ def page1():
         session["user"]["q4"] = form.q4.data;
         # we now redirect the user to part 2
         return redirect('/sus/2')
-    flash("Please finish filling out all questions correctly.")
+    #flash("Please finish filling out all questions correctly.")
     return render_template('sus1.html', form=form)
 
 @app.route('/sus/2', methods=('GET','POST'))
 def page2():
+    """
+    Renders the second part of the survey. The survey comes from a form 'Step2' which contains all the needed fields.
+    Upon sucessful completion we store the results in the session and redirect to '/saveSurvey' which then saves the survey.
+    """
     form = Step2()
     if form.validate_on_submit():
         session["user"]["part2"] = True
         # we need to store the info from the survey
         return redirect('/saveSurvey')
-    flash("Please finish filling out all questions correctly.")
+    #flash("Please finish filling out all questions correctly.")
     return render_template('sus2.html', form=form)
 
 def redirectUserCorrectly():
@@ -83,14 +90,23 @@ def redirectUserCorrectly():
 
 @app.route("/cancel")
 def cancel():
-    session["user"] = None
+    """
+    If the user want to cancel the form this function gets called.
+    It deletes everything the user has entered and returns to the index page.
+    """
+    session.pop('user', None)
     flash("Cancelled filling out survey!")
     redirectUserCorrectlyFromWithinSurvey("/cancel")
     return redirect("/")
 
+
 @app.route("/thank-you")
 def thank_you():
+    """
+    A function which just renders a thank you page. Gets called at the end of the survey AFTER saving the data.
+    """
     return render_template('thank-you.html')
+
 
 def redirectUserCorrectlyFromWithinSurvey(currentPage):
     return
