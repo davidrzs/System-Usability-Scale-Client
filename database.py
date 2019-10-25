@@ -11,13 +11,10 @@ class Database:
     def addDataToDatabase(self, surveyData):
         dataTable.insert(surveyData)
 
-    def resetStudy(self):
-        pass
-
-    def getAllData(self):
-        print(dataTable.all())
-
     def toCsvDownload(self):
+        """
+        returns all the data as a csv string which will then be downloaded to the users computer
+        """
         f = StringIO()
         # with open('study_data.csv', mode='w') as studyFile:
         dataWriter = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
