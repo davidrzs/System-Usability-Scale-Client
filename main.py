@@ -69,6 +69,12 @@ def page1():
         session["user"]["q2"] = form.q2.data;
         session["user"]["q3"] = form.q3.data;
         session["user"]["q4"] = form.q4.data;
+        session["user"]["q5"] = form.q5.data;
+        session["user"]["q6"] = form.q6.data;
+        session["user"]["q7"] = form.q7.data;
+        session["user"]["q8"] = form.q8.data;
+        session["user"]["q9"] = form.q9.data;
+        session["user"]["q10"] = form.q10.data;
         # we now redirect the user to part 2
         return redirect('/sus/2')
     if request.method == 'POST':

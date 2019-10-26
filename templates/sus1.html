@@ -2,17 +2,17 @@
 
 {% block questions %}
 <div class="container">
-<h2>First round of Questions</h2>
+<h2>Quantitativer Fragebogen</h2>
         <form method="POST" action="/sus/1">
             {{ form.csrf_token }}
             
             <!--------question 1----->
             <div class="form-group question">
-              <p class="questionText">I think that I would like to use this system frequently.</p>
+              <p class="questionText">Ich kann mir sehr gut vorstellen, das System regelmäßig zu nutzen.</p>
               <div class="row">
                 <div class="col">
                 </div>
-                {% for subfield in form.q3 %}
+                {% for subfield in form.q1 %}
                   <div class="form-check form-check-inline">
                     <div class="col">
                       {{subfield.label(class_="form-check-label")}}
@@ -27,30 +27,9 @@
 
 
 
-            <!--------question 1----->
+            <!--------question 2----->
             <div class="form-group question">
-              <p class="questionText">I think that I would like to use this system frequently.</p>
-              <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q4 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
-                    </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
-              </div>
-            </div>
-
-
-
-            <!--------question 1----->
-            <div class="form-group question">
-              <p class="questionText">I think that I would like to use this system frequently.</p>
+              <p class="questionText">Ich empfinde das System als unnötig komplex.</p>
               <div class="row">
                 <div class="col">
                 </div>
@@ -69,13 +48,148 @@
 
 
 
-            <!--------question 1----->
+            <!--------question 3----->
             <div class="form-group question">
-              <p class="questionText">I think that I would like to use this system frequently.</p>
+              <p class="questionText">Ich empfinde das System als einfach zu nutzen.</p>
               <div class="row">
                 <div class="col">
                 </div>
-                {% for subfield in form.q1 %}
+                {% for subfield in form.q3 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+
+
+            <!--------question 4----->
+            <div class="form-group question">
+              <p class="questionText">Ich denke, dass ich technischen Support brauchen würde, um das System zu nutzen.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q4 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 5----->
+            <div class="form-group question">
+              <p class="questionText">Ich finde, dass die verschiedenen Funktionen des Systems gut integriert sind.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q5 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 6----->
+            <div class="form-group question">
+              <p class="questionText">Ich finde, dass es im System zu viele Inkonsistenzen gibt.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q6 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 7----->
+            <div class="form-group question">
+              <p class="questionText">Ich kann mir vorstellen, dass die meisten Leute das System schnell zu beherrschen lernen.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q7 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 8----->
+            <div class="form-group question">
+              <p class="questionText">Ich empfinde die Bedienung als sehr umständlich.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q8 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 9----->
+            <div class="form-group question">
+              <p class="questionText">Ich habe mich bei der Nutzung des Systems sehr sicher gefühlt.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q9 %}
+                  <div class="form-check form-check-inline">
+                    <div class="col">
+                      {{subfield.label(class_="form-check-label")}}
+                      {{subfield(class_="form-check-input")}}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <!--------question 10----->
+            <div class="form-group question">
+              <p class="questionText">Ich musste eine Menge Dinge lernen, bevor ich mit dem System arbeiten konnte.</p>
+              <div class="row">
+                <div class="col">
+                </div>
+                {% for subfield in form.q10 %}
                   <div class="form-check form-check-inline">
                     <div class="col">
                       {{subfield.label(class_="form-check-label")}}

@@ -2,17 +2,47 @@
 
 {% block questions %}
 <div class="container">
-    <h2>Second round of Questions</h2>
+    <h2>Qualitativer Fragebogen</h2>
 
         <form method="POST" action="/sus/2">
             {{ form.csrf_token }}
+            
             <!--------question 1----->
             <div class="form-group question">
-                <p class="questionText">I think that I would like to use this system frequently.</p>
-            {{ form.name(class_="form-control") }}
-
-              </div>
+                <p class="questionText">Was lief gut, was lief nicht so gut?</p>
+                {{ form.open1(class_="form-control") }}
+            </div>
   
+            <!--------question 2----->
+            <div class="form-group question">
+                <p class="questionText">Hat Sie etwas während dem Aufsetzen des Kurses gestört?</p>
+                {{ form.open2(class_="form-control") }}
+            </div>
+
+            <!--------question 3----->
+            <div class="form-group question">
+                <p class="questionText">Was würde die das Aufsetzen angenehmer gestalten?</p>
+                {{ form.open3(class_="form-control") }}
+            </div>
+
+            <!--------question 4----->
+            <div class="form-group question">
+                <p class="questionText">Gab es eine Situation, in der Ihr Versuch nicht auf Anhieb funktioniert hat? Wenn ja, welche?</p>
+                {{ form.open4(class_="form-control") }}
+            </div>
+
+            <!--------question 5----->
+            <div class="form-group question">
+                <p class="questionText">Wie sollte die Situation Ihrer Meinung nach aussehen, um den Frust zu vermeiden?</p>
+                {{ form.open5(class_="form-control") }}
+            </div>
+
+            <!--------question 6----->
+            <div class="form-group question">
+                <p class="questionText">Gab es während Ihrem vorherigen Gebrauch von MOOCs Aspekte, die Sie störten/nervten? Wenn ja, welche?</p>
+                {{ form.open6(class_="form-control") }}
+            </div>
+
           <input class="btn btn-primary" type="submit" value="Gehe zur nächsten Seite">
   
   
