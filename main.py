@@ -19,12 +19,9 @@ sess.init_app(app)
 database = Database()
 
 @app.route('/')
-def hello_world():
-    res = redirectUserCorrectlyFromWithinSurvey("/")
-    
-    if(res != None):
-        return res
-    
+def init():
+    if database.getLocale() == None:
+        redirect("/choose_language")
     return render_template('/index.html')
 
 @app.route("/saveSurvey")
@@ -36,7 +33,7 @@ def saveSurvey(methods=('GET', 'POST')):
     database.addDataToDatabase(session.get("user"))
     # remove the user from the session object
     session["user"] = None
-    flash("Thank you. Your data has been saved")
+    flash("Herzlichen Dank. Ihre Daten wurden gespeichert.")
     # redirect to thank you page
     return redirect("/thank-you")
 
@@ -48,7 +45,7 @@ def exportToCSVDownload():
 @app.route("/exportToCSVFile")
 def exportToCSVFile():
     database.toCsvFile()
-    flash("Data sucessfully exported to file.")
+    flash("Daten erfolgreich in Datei exportiert")
     return redirect("/")
 
 @app.route("/newSurvey")
@@ -90,6 +87,11 @@ def page2():
     form = Step2()
     if form.validate_on_submit():
         session["user"]["part2"] = True
+        session["user"]["open1"] = form.open1.data;
+        session["user"]["open2"] = form.open2.data;
+        session["user"]["open3"] = form.open3.data;
+        session["user"]["open4"] = form.open4.data;
+        session["user"]["open5"] = form.open5.data;
         # we need to store the info from the survey
         return redirect('/saveSurvey')
     #flash("Please finish filling out all questions correctly.")
@@ -113,7 +115,7 @@ def cancel():
     It deletes everything the user has entered and returns to the index page.
     """
     session.pop('user', None)
-    flash("Cancelled filling out survey!")
+    flash("Ausfüllen der Umfrage abgebrochen")
     redirectUserCorrectlyFromWithinSurvey("/cancel")
     return redirect("/")
 

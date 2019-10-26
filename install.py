@@ -1,8 +1,8 @@
-#python3
+# python3
 from subprocess import call
 import platform
 
-toInstall = ['tinydb', 'flask', 'flask_session', 'pyinstaller']
+toInstall = ['tinydb', 'flask', 'flask_session', 'pyinstaller', 'flask_wtf']
 
 def main():
     system = platform.system()
