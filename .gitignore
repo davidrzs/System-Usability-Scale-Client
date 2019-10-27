@@ -5,3 +5,4 @@ db.json
 build/*
 dist/*
 study_data.csv
+*.xlsx
