@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=[./SUSProgram'],
+             pathex=['C:\\Users\\David\\Documents\\GitHub\\System-Usability-Scale-Client'],
              binaries=[],
              datas=[('templates', 'templates')],
              hiddenimports=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='main',
+          name='sus',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
