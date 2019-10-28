@@ -50,9 +50,6 @@ def exportToCSVFile():
 
 @app.route("/newSurvey")
 def createNewSurvey():
-    res = redirectUserCorrectlyFromWithinSurvey("/newSurvey")
-    if(res != None):
-        return res
     session["user"] = {"part1":False, "part2":False}
     return redirect("/sus/1")
 
@@ -92,6 +89,7 @@ def page2():
         session["user"]["open3"] = form.open3.data;
         session["user"]["open4"] = form.open4.data;
         session["user"]["open5"] = form.open5.data;
+        session["user"]["open6"] = form.open6.data;
         # we need to store the info from the survey
         return redirect('/saveSurvey')
     #flash("Please finish filling out all questions correctly.")
@@ -116,7 +114,6 @@ def cancel():
     """
     session.pop('user', None)
     flash("Ausfüllen der Umfrage abgebrochen")
-    redirectUserCorrectlyFromWithinSurvey("/cancel")
     return redirect("/")
 
 
@@ -127,38 +124,5 @@ def thank_you():
     """
     return render_template('thank-you.html')
 
-
-def redirectUserCorrectlyFromWithinSurvey(currentPage):
-    return
-    """
-    if(("user" not in session) and (currentPage == "/" or currentPage == "/newSurvey")):
-        print("new user not yet created")
-        return
-    
-    if(("user" not in session) and currentPage != "/"):
-        print("redirect to home from somewhere")
-        return redirect("/")
-    
-    if((not session["user"]["part1"] ) and currentPage != "/sus/1"):
-        print("fuck1")
-        print(session)
-        return redirect("/sus/1")
-
-    if((not session["user"]["part1"] ) and currentPage == "/sus/1"):
-        print("fuck1")
-        return
-    
-    if((session["user"]["part1"] and not session["user"]["part2"] ) and currentPage != "/sus/2"):
-        return redirect("/sus/2")
-
-    if((session["user"]["part1"] and not session["user"]["part2"] ) and currentPage == "/sus/2"):
-        return
-    
-    if(session["user"]["part1"] and session["user"]["part2"]):
-        return redirect("/saveSurvey")
-    else:
-        return
-    """
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
