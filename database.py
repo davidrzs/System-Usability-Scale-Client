@@ -34,7 +34,7 @@ class Database:
             studyFile.write('sep=,\n')
             dataWriter = csv.writer(studyFile, dialect='excel')
             # adding the header
-            dataWriter.writerow(["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","open1","open2","open3","open4","open5"])
+            dataWriter.writerow(["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","open1","open2","open3","open4","open5","open6"])
             for line in dataTable.all():
                 dataWriter.writerow(line.values())
                 
