@@ -89,6 +89,7 @@ def page2():
         session["user"]["open3"] = form.open3.data;
         session["user"]["open4"] = form.open4.data;
         session["user"]["open5"] = form.open5.data;
+        session["user"]["open6"] = form.open6.data;
         # we need to store the info from the survey
         return redirect('/saveSurvey')
     #flash("Please finish filling out all questions correctly.")
