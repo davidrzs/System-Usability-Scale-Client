@@ -1,6 +1,21 @@
-# Welcome to the System Usability Scale Client software
+# System Usability Scale Client software - Making Usability Research a tiny bit better.
 
-A easy to use .... TODO
+This software enables you to create very simple system usability scale surveys. It has been designed to be run on a lab computer and have participants answer a set of predefined questions and then record the asnwers in a CSV file, ready to be exported to Excel for further data analysis.
+
+It has been written for a usability study conducted at [ETH Zürich](https://ethz.ch/) and the [University of Zürich](https://www.uzh.ch/en.html).
+
+- [Why have we written this software?](#why-have-we-written-this-software)
+- [Getting Started](#getting-started)
+- [How to install it](#installing)
+- [License and Sources](#license-and-sources)
+
+## Getting Started
+
+TODO
+
+## Why have we written this software?
+
+TODO
 
 ## Installing
 
@@ -38,3 +53,5 @@ A tiny bit more complex than just running the Python script but still doable. Ju
 ## License and Sources
 
 As of right now all rights are reserved by Robin Peter and David Zollikofer
+
+TODO
