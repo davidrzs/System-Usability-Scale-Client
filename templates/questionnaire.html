@@ -1,5 +1,22 @@
 {% extends 'base_template.html' %}
 
 {% block content %}
-{% block questions %}{% endblock %}
+
+<!-- error handling code -->
+
+{% if form.errors %}
+    <div class="flashContainer">
+        <div class="alert alert-primary" role="alert">
+            <p>Leider haben Sie noch nicht alle Fragen beantwortet:</p>
+            <ul>
+                {% for field in form.errors %}
+                    <li>Bitte {{form[field].label}} beantworten.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>  
+{% endif %}
+
+{% block questions %}
+{% endblock %}
 {% endblock %}

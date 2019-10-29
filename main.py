@@ -72,8 +72,6 @@ def page1():
         session["user"]["q10"] = form.q10.data;
         # we now redirect the user to part 2
         return redirect('/sus/2')
-    if request.method == 'POST':
-        flash("Bitte beantworten Sie zuerst alle Fragen.")
     return render_template('sus1.html', form=form)
 
 @app.route('/sus/2', methods=('GET','POST'))
@@ -93,7 +91,6 @@ def page2():
         session["user"]["open6"] = form.open6.data;
         # we need to store the info from the survey
         return redirect('/saveSurvey')
-    #flash("Please finish filling out all questions correctly.")
     return render_template('sus2.html', form=form)
 
 def redirectUserCorrectly():
