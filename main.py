@@ -33,6 +33,7 @@ def saveSurvey(methods=('GET', 'POST')):
     database.addDataToDatabase(session.get("user"))
     # remove the user from the session object
     session["user"] = None
+    database.toCsvFile()
     flash("Herzlichen Dank. Ihre Daten wurden gespeichert.")
     # redirect to thank you page
     return redirect("/thank-you")
