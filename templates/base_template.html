@@ -34,9 +34,40 @@ body{
   background-color: white;
   border-radius: 3px;
 }
+
+.checkBoxGroup{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+
+.form-check-inline{
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/*
+a hack to center oversized text: https://stackoverflow.com/questions/6618648/can-overflow-text-be-centered
+*/
+.label{
+  margin-left: -100%;
+  margin-right: -100%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle
+}
+
+.qtable{
+  width:100%;
+  table-layout: fixed;
+}
+
 .question{
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 45px;
+  margin-bottom: 45px;
   border-style: solid;
   border-width: 1px;
   border-color: #a9b4c2;

@@ -10,18 +10,24 @@
             <div class="form-group question">
               <p class="questionText">Ich kann mir sehr gut vorstellen, das System regelmäßig zu nutzen.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q1 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q1 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q1 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -31,18 +37,24 @@
             <div class="form-group question">
               <p class="questionText">Ich empfinde das System als unnötig komplex.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q2 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q2 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q2 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -52,18 +64,24 @@
             <div class="form-group question">
               <p class="questionText">Ich empfinde das System als einfach zu nutzen.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q3 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q3 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q3 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -73,18 +91,24 @@
             <div class="form-group question">
               <p class="questionText">Ich denke, dass ich technischen Support brauchen würde, um das System zu nutzen.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q4 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q4 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q4 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -92,18 +116,24 @@
             <div class="form-group question">
               <p class="questionText">Ich finde, dass die verschiedenen Funktionen des Systems gut integriert sind.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q5 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q5 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q5 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -111,18 +141,24 @@
             <div class="form-group question">
               <p class="questionText">Ich finde, dass es im System zu viele Inkonsistenzen gibt.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q6 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q6 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q6 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -130,18 +166,24 @@
             <div class="form-group question">
               <p class="questionText">Ich kann mir vorstellen, dass die meisten Leute das System schnell zu beherrschen lernen.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q7 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q7 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q7 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -151,14 +193,20 @@
               <div class="row">
                 <div class="col">
                 </div>
-                {% for subfield in form.q8 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
-                    </div>
-                  </div>
-                {% endfor %}
+                <div class="col-5">
+                  <table class="qtable">
+                      <tr>
+                          {% for subfield in form.q8 %}
+                              <td align="center"> {{subfield.label(class_="label")}}</td>      
+                          {% endfor %}
+                      </tr>
+                      <tr>
+                          {% for subfield in form.q8 %}
+                              <td align="center"> {{subfield(class_="")}}</td>      
+                          {% endfor %}
+                      </tr>
+                  </table> 
+                </div>
                 <div class="col">
                 </div>
               </div>
@@ -168,18 +216,24 @@
             <div class="form-group question">
               <p class="questionText">Ich habe mich bei der Nutzung des Systems sehr sicher gefühlt.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q9 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q9 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q9 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
@@ -187,18 +241,24 @@
             <div class="form-group question">
               <p class="questionText">Ich musste eine Menge Dinge lernen, bevor ich mit dem System arbeiten konnte.</p>
               <div class="row">
-                <div class="col">
-                </div>
-                {% for subfield in form.q10 %}
-                  <div class="form-check form-check-inline">
-                    <div class="col">
-                      {{subfield.label(class_="form-check-label")}}
-                      {{subfield(class_="form-check-input")}}
+                  <div class="col">
                     </div>
-                  </div>
-                {% endfor %}
-                <div class="col">
-                </div>
+                    <div class="col-5">
+                      <table class="qtable">
+                          <tr>
+                              {% for subfield in form.q10 %}
+                                  <td align="center"> {{subfield.label(class_="label")}}</td>      
+                              {% endfor %}
+                          </tr>
+                          <tr>
+                              {% for subfield in form.q10 %}
+                                  <td align="center"> {{subfield(class_="")}}</td>      
+                              {% endfor %}
+                          </tr>
+                      </table> 
+                    </div>
+                    <div class="col">
+                    </div>
               </div>
             </div>
 
